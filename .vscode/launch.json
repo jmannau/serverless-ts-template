@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Serverless Offline",
+      "program": "${workspaceRoot}/node_modules/.bin/serverless",
+      "args": ["offline", "--noTimeout", "--stage=dev", "--dontPrintOutput"],
+      "sourceMaps": true,
+      "runtimeArgs": ["--lazy"],
+      "outFiles": ["${workspaceFolder}/.webpack/**/*.js"],
+      "protocol": "inspector",
+      "runtimeExecutable": "node",
+      // "localRoot": "${workspaceFolder}",
+      "env": {
+        // Here we set some environment vars that should be set locally.
+        // They can and will overwrite the ones coming from your serverless.yml
+      },
+      "windows": {
+        "program": "${workspaceRoot}\\node_modules\\serverless\\bin\\serverless"
+      }
+    }
+  ]
+}
