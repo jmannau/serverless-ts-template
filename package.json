@@ -1,7 +1,7 @@
 {
-  "name": "aws-nodejs-typescript",
+  "name": "serverless-ts-template",
   "version": "1.0.0",
-  "description": "Serverless webpack example using Typescript",
+  "description": "An opinionated Serverless starter template including Typescript, Koa & Jest",
   "main": "handler.js",
   "scripts": {
     "sls": "serverless",
@@ -26,8 +26,8 @@
     "typescript": "^3.4.1",
     "webpack": "^4.29.6"
   },
-  "author": "Binary",
-  "license": "UNLICENSED",
+  "author": "James Manners",
+  "license": "MIT",
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "koa": "^2.7.0",
