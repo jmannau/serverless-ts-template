@@ -3,3 +3,6 @@ branches:
   only:
     - master
     - /^greenkeeper.*$/
+script:
+  - npm test
+  - npm run sls package
