@@ -1,6 +1,6 @@
 # Serverless + Koa + Typescript + Jest Starter Project
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/jmannau/serverless-ts-template.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/jmannau/serverless-ts-template.svg?branch=master)](https://travis-ci.org/jmannau/serverless-ts-template) [![Greenkeeper badge](https://badges.greenkeeper.io/jmannau/serverless-ts-template.svg)](https://greenkeeper.io/)
 
 We often use [Serverless](https://serverless.com) for microservices. This is an opinionated starter project for serverless http microservices that uses;
 
@@ -17,16 +17,17 @@ We often use [Serverless](https://serverless.com) for microservices. This is an 
 
 We often use serverless functions for http microservices. These all require common functionality including:
 
-- CORS
-- JSON Body Parsing
-- Error handling
-- Response mapping
+- [CORS](https://github.com/koajs/cors)
+- [Request Body Parsing](https://github.com/koajs/bodyparser)
+- [Error handling](https://github.com/koajs/koa/blob/master/docs/error-handling.md)
+- [Request validation](https://www.npmjs.com/search?q=koa%20validation&ranking=optimal)
+- [And more...](https://www.npmjs.com/search?q=koa%20middleware)
 
-Koa has well maintained middleware to handle all of the above and much more. These are used by many people, have been designed with security in mind to prevent common attacks.
+Koa has a library of well maintained, tested & proven middleware to handle all of the above and much more. These are used by many people, have been designed with security in mind to prevent common attacks. There is no need to manually add CORS headers to responses, nor parse request bodies.
 
 ## Installation
 
 1. Clone or download this project
 1. `npm install` or `yarn install`
-1. `npm test` to run tests
+1. `npm test` to run tests or `npm test -- --watch` to run the tests in watch mode.
 1. `npm run sls:offline` to start the offline server using serverless-offline
