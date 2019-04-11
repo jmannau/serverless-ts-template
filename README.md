@@ -1,5 +1,7 @@
 # Serverless + Koa + Typescript + Jest Starter Project
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jmannau/serverless-ts-template.svg)](https://greenkeeper.io/)
+
 We often use [Serverless](https://serverless.com) for microservices. This is an opinionated starter project for serverless http microservices that uses;
 
 - Serverless
