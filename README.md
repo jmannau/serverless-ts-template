@@ -27,7 +27,11 @@ Koa has a library of well maintained, tested & proven middleware to handle all o
 
 ## Installation
 
-1. Clone or download this project
+- Clone or download this project
+- or `$serverless install --url https://github.com/jmannau/serverless-ts-template --name project-name`
+
+then
+
 1. `npm install` or `yarn install`
 1. `npm test` to run tests or `npm test -- --watch` to run the tests in watch mode.
 1. `npm run sls:offline` to start the offline server using serverless-offline
