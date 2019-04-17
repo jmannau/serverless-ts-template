@@ -32,7 +32,7 @@
     "@koa/cors": "^3.0.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
-    "serverless-http": "^1.9.1",
+    "serverless-http": "^1.10.1",
     "source-map-support": "^0.5.11"
   },
   "jest": {
