@@ -5,7 +5,7 @@ import {
 } from "aws-lambda";
 import * as Koa from "koa";
 import * as bodyParser from "koa-bodyparser";
-import * as serverlessHttp from "serverless-http";
+import serverlessHttp = require("serverless-http");
 import "source-map-support/register";
 import { HttpWarmup } from "./lib/http-warmup";
 
@@ -37,7 +37,7 @@ app.use(async ctx => {
   }
 });
 
-export const post: APIGatewayProxyHandler = (<any>serverlessHttp)(app, {
+export const post: APIGatewayProxyHandler = serverlessHttp(app, {
   request: (request, _, context) => {
     request.context = context;
   }
