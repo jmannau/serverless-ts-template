@@ -3,7 +3,7 @@ import { Context } from "aws-lambda";
 import { post } from "../index";
 
 describe("index.ts", () => {
-  it("should work", done => {
+  it("should work", async() => {
     const event = createEvent({
       template: "aws:apiGateway",
       merge: {
@@ -18,17 +18,15 @@ describe("index.ts", () => {
         path: "testhost:3000/test"
       }
     });
-    post(event, {} as Context, (error, response) => {
-      expect(response).toMatchObject({
-        headers: { "content-type": "application/json; charset=utf-8" },
-        body: JSON.stringify({ data: "hello world" })
-      });
-      expect(error).toBeNull();
-      done();
+    const response = await post(event, {} as Context, undefined);
+
+    expect(response).toMatchObject({
+      headers: { "content-type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ data: "hello world" })
     });
   });
 
-  it("should return an empty response if the X-Serverless-Warmup header is present", done => {
+  it("should return an empty response if the X-Serverless-Warmup header is present", async() => {
     const event = createEvent({
       template: "aws:apiGateway",
       merge: {
@@ -41,18 +39,15 @@ describe("index.ts", () => {
         origin: ""
       }
     });
-    post(event, {} as Context, (error, response) => {
-      expect(response).toMatchObject({
-        statusCode: 204,
-        body: ""
-      });
-
-      expect(error).toBeNull();
-      done();
+    const response = await post(event, {} as Context, undefined);
+    expect(response).toMatchObject({
+      statusCode: 204,
+      body: ""
     });
+
   });
 
-  it("should add cors headers to response", done => {
+  it("should add cors headers to response", async() => {
     const origin = "http://test.test";
     const event = createEvent({
       template: "aws:apiGateway",
@@ -65,13 +60,12 @@ describe("index.ts", () => {
         path: "testhost:3000/test"
       }
     });
-    post(event, {} as Context, (error, response) => {
-      expect(response.headers).toMatchObject({
-        "access-control-allow-origin": origin
-      });
-
-      expect(error).toBeNull();
-      done();
+    const response = await post(event, {} as Context, undefined);
+    if( !response){
+      throw new Error("response is void");
+    }
+    expect(response.headers).toMatchObject({
+      "access-control-allow-origin": origin
     });
   });
 });
