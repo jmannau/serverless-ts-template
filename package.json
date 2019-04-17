@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An opinionated Serverless starter template including Typescript, Koa & Jest",
   "main": "handler.js",
+  "repository": "github:jmannau/serverless-ts-template",
   "scripts": {
     "sls": "serverless",
     "sls:offline": "serverless offline",
