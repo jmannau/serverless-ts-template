@@ -28,7 +28,7 @@ Koa has a library of well maintained, tested & proven middleware to handle all o
 ## Installation
 
 - Clone or download this project
-- or `$serverless install --url https://github.com/jmannau/serverless-ts-template --name project-name`
+- or `$ serverless install --url https://github.com/jmannau/serverless-ts-template --name project-name`
 
 then
 
