@@ -1,9 +1,12 @@
 import * as createEvent from "aws-event-mocks";
 import { Context } from "aws-lambda";
+import * as AWS from "aws-sdk";
+import * as AWSMocks from "aws-sdk-mock";
+
 import { post } from "../index";
 
 describe("index.ts", () => {
-  it("should work", async() => {
+  it("should work", async () => {
     const event = createEvent({
       template: "aws:apiGateway",
       merge: {
@@ -26,7 +29,7 @@ describe("index.ts", () => {
     });
   });
 
-  it("should return an empty response if the X-Serverless-Warmup header is present", async() => {
+  it("should return an empty response if the X-Serverless-Warmup header is present", async () => {
     const event = createEvent({
       template: "aws:apiGateway",
       merge: {
@@ -44,10 +47,9 @@ describe("index.ts", () => {
       statusCode: 204,
       body: ""
     });
-
   });
 
-  it("should add cors headers to response", async() => {
+  it("should add cors headers to response", async () => {
     const origin = "http://test.test";
     const event = createEvent({
       template: "aws:apiGateway",
@@ -61,11 +63,50 @@ describe("index.ts", () => {
       }
     });
     const response = await post(event, {} as Context, undefined);
-    if( !response){
+    if (!response) {
       throw new Error("response is void");
     }
     expect(response.headers).toMatchObject({
       "access-control-allow-origin": origin
     });
+  });
+
+  it("should be able to mock s3 getObjecct", async () => {
+    const data = "1234";
+    const spy = jest.fn((_params, callback) => {
+      callback(null, { Body: data });
+    });
+    AWSMocks.mock("S3", "getObject", spy);
+
+    const s3 = new AWS.S3({});
+    const { Body } = await s3
+      .getObject({
+        Bucket: "123",
+        Key: "test-data.json"
+      })
+      .promise();
+
+    expect(spy).toHaveBeenCalled();
+    expect(Body).toEqual(data);
+  });
+
+  it("should be able to mock s3 putObject", async () => {
+    const data = "1234";
+    const spy = jest.fn((_error, callback) => callback(null, undefined));
+    AWSMocks.mock("S3", "putObject", spy);
+
+    const s3 = new AWS.S3({});
+    await s3
+      .putObject({
+        Bucket: "123",
+        Key: "test-data.json",
+        Body: data
+      })
+      .promise();
+
+    expect(spy).toHaveBeenCalledWith(
+      expect.objectContaining({ Body: data }),
+      expect.anything()
+    );
   });
 });
