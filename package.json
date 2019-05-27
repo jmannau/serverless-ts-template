@@ -19,7 +19,6 @@
     "aws-event-mocks": "0.0.0",
     "aws-sdk": "^2.458.0",
     "aws-sdk-mock": "^4.4.0",
-    "greenkeeper-lockfile": "^1.15.1",
     "jest": "^24.8.0",
     "serverless": "^1.42.3",
     "serverless-offline": "^4.10.3",
