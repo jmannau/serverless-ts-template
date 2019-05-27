@@ -13,7 +13,7 @@
     "@types/aws-lambda": "^8.10.25",
     "@types/jest": "^24.0.13",
     "@types/koa": "^2.0.48",
-    "@types/koa-bodyparser": "^4.2.2",
+    "@types/koa-bodyparser": "^4.3.0",
     "@types/koa__cors": "^2.2.3",
     "@types/node": "^12.0.2",
     "aws-event-mocks": "0.0.0",
