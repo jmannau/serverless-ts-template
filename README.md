@@ -1,6 +1,6 @@
 # Serverless + Koa + Typescript + Jest Starter Project
 
-[![Build Status](https://travis-ci.org/jmannau/serverless-ts-template.svg?branch=master)](https://travis-ci.org/jmannau/serverless-ts-template) [![Greenkeeper badge](https://badges.greenkeeper.io/jmannau/serverless-ts-template.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/jmannau/serverless-ts-template.svg?branch=master)](https://travis-ci.org/jmannau/serverless-ts-template)
 
 We often use [Serverless](https://serverless.com) for microservices. This is an opinionated starter project for serverless http microservices that uses;
 
@@ -28,7 +28,7 @@ Koa has a library of well maintained, tested & proven middleware to handle all o
 ## Installation
 
 - Clone or download this project
-- or $ `serverless install --url https://github.com/jmannau/serverless-ts-template --name project-name`
+- or \$ `serverless install --url https://github.com/jmannau/serverless-ts-template --name project-name`
 
 then
 
