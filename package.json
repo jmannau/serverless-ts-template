@@ -21,7 +21,7 @@
     "aws-sdk-mock": "^4.4.0",
     "jest": "^24.8.0",
     "serverless": "^1.44.1",
-    "serverless-offline": "^5.3.2",
+    "serverless-offline": "^5.3.3",
     "serverless-webpack": "^5.3.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.2",
