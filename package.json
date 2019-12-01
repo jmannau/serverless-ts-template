@@ -35,7 +35,7 @@
     "koa": "^2.8.2",
     "koa-bodyparser": "^4.2.1",
     "serverless-http": "^2.3.0",
-    "source-map-support": "^0.5.13"
+    "source-map-support": "^0.5.16"
   },
   "jest": {
     "preset": "ts-jest",
