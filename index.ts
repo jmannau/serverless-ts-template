@@ -39,7 +39,7 @@ app.use(async ctx => {
   }
 });
 
-export const post = serverlessHttp(app, {
+export const post = (serverlessHttp(app, {
   request: (
     request,
     event: APIGatewayEvent,
@@ -48,4 +48,4 @@ export const post = serverlessHttp(app, {
     request.event = event;
     request.context = context;
   }
-});
+}) as unknown) as APIGatewayProxyHandler; // Until serverless-http releases a new package with updated types
