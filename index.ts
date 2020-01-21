@@ -39,7 +39,7 @@ app.use(async ctx => {
   }
 });
 
-export const post: APIGatewayProxyHandler = serverlessHttp(app, {
+export const post = serverlessHttp(app, {
   request: (
     request,
     event: APIGatewayEvent,
