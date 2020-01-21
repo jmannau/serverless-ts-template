@@ -1,13 +1,14 @@
 import * as cors from "@koa/cors";
 import {
+  APIGatewayEvent,
   APIGatewayEventRequestContext,
   APIGatewayProxyHandler
 } from "aws-lambda";
 import * as Koa from "koa";
 import * as bodyParser from "koa-bodyparser";
-import serverlessHttp = require("serverless-http");
 import "source-map-support/register";
 import { HttpWarmup } from "./lib/http-warmup";
+import serverlessHttp = require("serverless-http");
 
 /**
  * This type definition allows us to update the Koa.ParameterizedContext with
@@ -15,6 +16,7 @@ import { HttpWarmup } from "./lib/http-warmup";
  */
 interface CustomRequestContext {
   req: {
+    event: APIGatewayEvent;
     context: APIGatewayEventRequestContext;
   };
 }
@@ -38,7 +40,12 @@ app.use(async ctx => {
 });
 
 export const post: APIGatewayProxyHandler = serverlessHttp(app, {
-  request: (request, _, context) => {
+  request: (
+    request,
+    event: APIGatewayEvent,
+    context: APIGatewayEventRequestContext
+  ) => {
+    request.event = event;
     request.context = context;
   }
 });
