@@ -8,9 +8,10 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   memorySize: 256
   region: ap-southeast-2
+  logRetentionInDays: 14 # Set the default RetentionInDays for a CloudWatch LogGroup
   environment:
     API_KEY: "1234"
 
@@ -27,6 +28,9 @@ functions:
           path: index
           cors:
             origin: "*"
+            # origins:
+            # - http://localhost:*
+            # - https://test.com
             headers:
               - X-Serverless-Warmup
               - Content-Type
