@@ -34,7 +34,7 @@
     "@koa/cors": "^3.0.0",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
-    "serverless-http": "^2.3.1",
+    "serverless-http": "^2.3.2",
     "source-map-support": "^0.5.16"
   },
   "jest": {
