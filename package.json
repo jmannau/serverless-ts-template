@@ -18,7 +18,7 @@
     "@types/node": "^13.7.7",
     "aws-event-mocks": "0.0.0",
     "aws-sdk": "^2.650.0",
-    "aws-sdk-mock": "^5.0.0",
+    "aws-sdk-mock": "^5.1.0",
     "jest": "^25.2.4",
     "serverless": "^1.67.0",
     "serverless-offline": "^6.1.2",
