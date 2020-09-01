@@ -20,7 +20,7 @@
     "aws-sdk": "^2.725.0",
     "aws-sdk-mock": "^5.1.0",
     "jest": "^25.5.4",
-    "serverless": "^1.77.1",
+    "serverless": "^1.80.0",
     "serverless-offline": "^6.7.0",
     "serverless-webpack": "^5.3.4",
     "ts-jest": "^25.5.1",
