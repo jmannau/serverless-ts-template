@@ -22,7 +22,7 @@
     "jest": "^25.5.4",
     "serverless": "^1.80.0",
     "serverless-offline": "^6.7.0",
-    "serverless-webpack": "^5.3.4",
+    "serverless-webpack": "^5.3.5",
     "ts-jest": "^25.5.1",
     "ts-loader": "^8.0.3",
     "typescript": "^3.9.7",
