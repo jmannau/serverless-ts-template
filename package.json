@@ -17,7 +17,7 @@
     "@types/koa__cors": "^3.0.2",
     "@types/node": "^14.14.22",
     "aws-event-mocks": "0.0.0",
-    "aws-sdk": "^2.820.0",
+    "aws-sdk": "^2.834.0",
     "aws-sdk-mock": "^5.1.0",
     "jest": "^25.5.4",
     "serverless": "^2.13.0",
