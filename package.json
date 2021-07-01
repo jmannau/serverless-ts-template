@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.76",
+    "@types/aws-lambda": "^8.10.77",
     "@types/jest": "^26.0.23",
     "@types/koa": "^2.13.1",
     "@types/koa-bodyparser": "^4.3.0",
