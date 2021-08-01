@@ -12,7 +12,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.81",
     "@types/jest": "^26.0.23",
-    "@types/koa": "^2.13.1",
+    "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.2",
     "@types/koa__cors": "^3.0.2",
     "@types/node": "^16.4.9",
